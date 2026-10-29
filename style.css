@@ -1,0 +1,119 @@
+/* 1. Colors and basic page settings */
+:root {
+    --background: #ffffff;
+    --surface: #f4f8f5;
+    --text: #20362c;
+    --muted: #597065;
+    --accent: #236447;
+    --border: #dce8df;
+}
+
+/* This class is added by JavaScript for dark mode. */
+body.dark-mode {
+    --background: #17251e;
+    --surface: #23362b;
+    --text: #f1f7f2;
+    --muted: #bfd0c3;
+    --accent: #a8e0b3;
+    --border: #42594a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--background); color: var(--text); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.container { width: min(90%, 1100px); margin-inline: auto; }
+.section { padding-block: 5rem; }
+h1, h2, h3 { line-height: 1.2; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+.section-intro { color: var(--muted); margin-bottom: 2rem; }
+
+/* 2. Header uses Flexbox */
+.site-header { border-bottom: 1px solid var(--border); background: var(--background); }
+.navigation { display: flex; align-items: center; justify-content: space-between; min-height: 5rem; gap: 2rem; }
+.logo { font-size: 1.4rem; font-weight: 800; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a:hover, .footer-links a:hover { text-decoration: underline; }
+.menu-button { display: none; background: transparent; border: 0; font-size: 1.7rem; color: var(--text); }
+
+/* 3. Hero uses CSS Grid */
+.hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding-block: 6rem; }
+.eyebrow { color: var(--accent); letter-spacing: 0.12em; font-weight: 700; font-size: 0.8rem; }
+h1 { font-size: clamp(2.3rem, 5vw, 4rem); max-width: 12ch; margin-block: 1.1rem; }
+.hero-text > p:not(.eyebrow) { color: var(--muted); max-width: 31rem; margin-bottom: 2rem; }
+.button { display: inline-block; border: 0; border-radius: 0.75rem; background: var(--accent); color: var(--background); padding: 0.9rem 1.5rem; font-weight: 700; }
+body.dark-mode .button { color: #17251e; }
+.button:hover { opacity: 0.88; }
+.hero-art { min-height: 19rem; background: #cfe8d7; border-radius: 1.5rem; display: grid; place-items: center; padding: 2rem; }
+.art-window { width: min(95%, 21rem); background: white; border-radius: 0.9rem; padding: 1.2rem; box-shadow: 0 1.2rem 2rem #1b523333; transform: rotate(-4deg); }
+.art-dots { color: #8bbba0; letter-spacing: 0.35rem; border-bottom: 1px solid #e0e8e2; padding-bottom: 0.6rem; }
+.art-line { background: #afd9bd; height: 0.8rem; width: 65%; margin-top: 0.9rem; border-radius: 1rem; }
+.art-line.wide { height: 1.4rem; width: 80%; margin-top: 1.4rem; background: #286748; }
+.art-boxes { display: flex; gap: 0.7rem; margin-top: 1.1rem; }
+.art-boxes span { height: 4.5rem; background: #e3eee6; border-radius: 0.5rem; flex: 1; }
+.art-pill { background: #286748; border-radius: 1rem; height: 1rem; width: 40%; margin-top: 1rem; }
+
+/* 4. About, project cards, and prices */
+.about-section, .prices-section { background: var(--surface); }
+.about-section p { max-width: 45rem; color: var(--muted); }
+.project-grid, .price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.project-card, .price-card { border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; background: var(--background); }
+.project-preview { height: 12rem; display: grid; place-items: center; overflow: hidden; }
+.preview-one { background: #d6eee0; }
+.preview-two { background: #ebdffc; }
+.preview-three { background: #f5e5c9; }
+.mini-top { height: 0.7rem; background: #b8c5bb; border-radius: 1rem; margin-bottom: 0.8rem; }
+.mini-heading { height: 1.4rem; background: #377c57; border-radius: 0.3rem; width: 75%; margin-bottom: 0.7rem; }
+.mini-button { height: 0.75rem; background: #91bc9a; border-radius: 1rem; width: 45%; }
+.preview-one > .mini-top, .preview-one > .mini-heading, .preview-one > .mini-button { display: none; }
+.preview-one::before { content: ''; display: block; width: 75%; height: 70%; border-radius: 0.6rem; background: linear-gradient(0deg, #7ab18e 35%, #fff 35%); border: 0.6rem solid white; box-shadow: 0 0.7rem 1rem #20533720; }
+.phone-screen { background: white; width: 6.2rem; height: 10rem; border: 0.35rem solid #3b4552; border-radius: 1.1rem; padding: 1rem 0.6rem; }
+.phone-circle { width: 3rem; height: 3rem; border-radius: 50%; background: #c7b2e6; margin: 0 auto 0.7rem; }
+.phone-screen .mini-heading { height: 0.6rem; }
+.dashboard { background: white; width: 80%; height: 8rem; border-radius: 0.7rem; padding: 1rem; }
+.chart-bars { height: 5rem; display: flex; align-items: end; gap: 0.6rem; }
+.chart-bars span { background: #e1b86f; flex: 1; border-radius: 0.3rem 0.3rem 0 0; height: 45%; }
+.chart-bars span:nth-child(2) { height: 80%; }
+.chart-bars span:nth-child(3) { height: 55%; }
+.chart-bars span:nth-child(4) { height: 95%; }
+.project-description { padding: 1.4rem; }
+.project-description h3 { font-size: 1.2rem; }
+.project-description p { margin-block: 0.7rem; color: var(--muted); }
+.project-tag { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 2rem; background: var(--surface); font-size: 0.8rem; }
+.price-card { padding: 1.7rem; }
+.price-card .price { font-size: 2rem; font-weight: 700; color: var(--accent); margin-block: 0.7rem; }
+.price-card p:last-child { color: var(--muted); }
+
+/* 5. Contact form */
+.contact-form { display: flex; flex-direction: column; gap: 0.65rem; max-width: 35rem; }
+.contact-form label { font-weight: 700; margin-top: 0.4rem; }
+.contact-form input { width: 100%; border: 1px solid var(--border); border-radius: 0.6rem; background: var(--background); color: var(--text); padding: 0.85rem; }
+.contact-form input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #6baf80; outline-offset: 3px; }
+.contact-form .button { align-self: flex-start; margin-top: 0.8rem; }
+.form-message { color: var(--accent); }
+
+/* 6. Footer */
+.site-footer { background: var(--surface); border-top: 1px solid var(--border); padding-block: 2rem; }
+.footer-content, .footer-links { display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; flex-wrap: wrap; }
+.footer-links button { border: 1px solid var(--border); background: var(--background); color: var(--text); padding: 0.5rem 0.8rem; border-radius: 0.5rem; }
+
+/* 7. Mobile-first-friendly layout changes */
+@media (max-width: 1023px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; }
+    .project-grid, .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+    .section { padding-block: 3.5rem; }
+    .hero { padding-block: 3.5rem; }
+    .hero-art { min-height: 15rem; }
+    .menu-button { display: block; }
+    .navigation { position: relative; }
+    .nav-links { display: none; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: 100%; left: -5.5%; width: 111%; padding: 0.7rem 5%; background: var(--background); border-bottom: 1px solid var(--border); z-index: 2; }
+    .nav-links.open { display: flex; }
+    .nav-links a { display: block; padding-block: 0.7rem; }
+    .project-grid, .price-grid { grid-template-columns: 1fr; }
+    .footer-content { align-items: flex-start; flex-direction: column; }
+}

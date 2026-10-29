@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A student UI/UX design portfolio.">
+    <title>My Portfolio | UI/UX Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- HEADER: Logo, navigation, and mobile menu button -->
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="logo" href="#home">MyPortfolio<span>.</span></a>
+            <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#prices">Prices</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO: Introduction and call-to-action -->
+        <section class="hero container" id="home">
+            <div class="hero-text">
+                <p class="eyebrow">HELLO! I'M A UI/UX DESIGN STUDENT</p>
+                <h1>I design simple and useful websites.</h1>
+                <p>I enjoy creating clean interfaces that are easy to understand and pleasant to use.</p>
+                <a class="button" href="#projects">View my projects →</a>
+            </div>
+            <div class="hero-art" aria-label="Decorative illustration of a simple website" role="img">
+                <div class="art-window"><div class="art-dots">● ● ●</div><div class="art-line wide"></div><div class="art-line"></div><div class="art-boxes"><span></span><span></span></div><div class="art-pill"></div></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <h2>About me</h2>
+                <p>I'm a student learning UI/UX design and front-end development. I use Figma for layouts and HTML, CSS, and JavaScript to turn ideas into websites.</p>
+            </div>
+        </section>
+
+        <!-- PROJECTS: Grid of three cards -->
+        <section class="section container" id="projects">
+            <h2>My projects</h2>
+            <p class="section-intro">A few examples of what I like to design.</p>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-preview preview-one" aria-hidden="true"><div class="mini-top"></div><div class="mini-heading"></div><div class="mini-button"></div></div>
+                    <div class="project-description"><h3>Travel Website</h3><p>A simple guide for exploring interesting places.</p><span class="project-tag">Web Design</span></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-preview preview-two" aria-hidden="true"><div class="phone-screen"><div class="mini-top"></div><div class="phone-circle"></div><div class="mini-heading"></div><div class="mini-button"></div></div></div>
+                    <div class="project-description"><h3>Mobile App</h3><p>A friendly design for an everyday mobile app.</p><span class="project-tag">Mobile UI</span></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-preview preview-three" aria-hidden="true"><div class="dashboard"><div class="mini-top"></div><div class="chart-bars"><span></span><span></span><span></span><span></span></div></div></div>
+                    <div class="project-description"><h3>Dashboard</h3><p>A clear dashboard with simple charts and cards.</p><span class="project-tag">Dashboard UI</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PRICES -->
+        <section class="section prices-section" id="prices">
+            <div class="container"><h2>My prices</h2><p class="section-intro">Example student project packages.</p>
+                <div class="price-grid">
+                    <article class="price-card"><h3>Landing Page</h3><p class="price">$50</p><p>One-page website layout</p></article>
+                    <article class="price-card"><h3>Mobile Design</h3><p class="price">$80</p><p>Basic mobile app screens</p></article>
+                    <article class="price-card"><h3>Website Design</h3><p class="price">$120</p><p>Multi-section website layout</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT: Browser validates required fields -->
+        <section class="section container" id="contact">
+            <h2>Contact me</h2>
+            <p class="section-intro">Have a project idea? Send me a message.</p>
+            <form class="contact-form" id="contactForm">
+                <label for="visitorName">Your name</label>
+                <input type="text" id="visitorName" name="name" placeholder="Enter your name" required minlength="2">
+                <label for="visitorEmail">Email</label>
+                <input type="email" id="visitorEmail" name="email" placeholder="you@example.com" required>
+                <label for="projectLink">Link to technical specifications</label>
+                <input type="url" id="projectLink" name="projectLink" placeholder="https://example.com/project" required>
+                <button class="button" type="submit">Send request →</button>
+                <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER: social links, copyright, and theme switch -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© <span id="year">2026</span> MyPortfolio. Student project.</p>
+            <div class="footer-links"><a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">Behance</a><a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">Dribbble</a><button id="themeButton" type="button" aria-pressed="false">🌙 Dark mode</button></div>
+        </div>
+    </footer>
+</body>
+</html>
